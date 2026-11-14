@@ -5,15 +5,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
 
 :root {
-  --bg: #081f3a;            /* deep navy */
-  --bg-2: #0b3560;          /* lighter navy (your original color) */
-  --card: #10325a;
-  --card-hover: #15406f;
+  --bg: #081f3a;            /* page background */
+  --bg-2: #0b3560;          /* glow at the top of the page */
+  --card: #10325a;          /* card / panel color */
   --border: rgba(255, 255, 255, 0.08);
   --text: #f4f7fb;
   --text-dim: #a9bbd1;
-  --accent: #f2b544;        /* amber */
-  --accent-2: #4fd1c5;      /* teal, used for tags */
+  --accent: #f2b544;        /* buttons, subtitle */
+  --on-accent: #1a1408;     /* text on buttons */
+  --accent-2: #4fd1c5;      /* tags */
   --radius: 12px;
   --max-width: 1100px;
   --font-head: "Space Grotesk", system-ui, sans-serif;
@@ -50,7 +50,7 @@ img { max-width: 100%; }
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(8, 31, 58, 0.85);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -105,7 +105,8 @@ img { max-width: 100%; }
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(242, 181, 68, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45),
+              0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
   background: var(--card);
   aspect-ratio: 16 / 9;
 }
@@ -116,6 +117,34 @@ img { max-width: 100%; }
   object-fit: cover;
   display: block;
 }
+
+/* ===== FunRug Studio blurb ===== */
+.studio-blurb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  max-width: 800px;
+  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+}
+.studio-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.studio-blurb p { margin: 0 0 0.5rem; color: var(--text-dim); font-size: 1.05rem; }
+
+/* Plain text link instead of a button */
+.text-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+}
+.text-link:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ===== Section headings ===== */
 .section { padding: 3rem 0 4rem; }
@@ -138,7 +167,7 @@ img { max-width: 100%; }
   background: var(--border);
 }
 
-/* ===== Project cards (large, alternating) ===== */
+/* ===== Project cards ===== */
 .project-grid {
   display: grid;
   gap: 3.5rem;   /* space between project cards */
@@ -160,7 +189,7 @@ img { max-width: 100%; }
 
 .project-media {
   display: block;
-  order: 2;          /* puts media on the right; delete this line to move it back left */
+  order: 2;          /* puts media on the right; delete this line to move it left */
   min-height: 300px;
   background: linear-gradient(135deg, var(--bg-2), var(--bg));
   overflow: hidden;
@@ -198,7 +227,7 @@ img { max-width: 100%; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
   list-style: none;
   padding: 0;
 }
@@ -207,8 +236,8 @@ img { max-width: 100%; }
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent-2);
-  background: rgba(79, 209, 197, 0.1);
-  border: 1px solid rgba(79, 209, 197, 0.25);
+  background: color-mix(in srgb, var(--accent-2) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 25%, transparent);
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
 }
@@ -218,7 +247,7 @@ img { max-width: 100%; }
   display: inline-block;
   align-self: flex-start;
   background: var(--accent);
-  color: #1a1408;
+  color: var(--on-accent);
   text-decoration: none;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
@@ -319,10 +348,7 @@ img { max-width: 100%; }
   gap: 3rem;
   margin: 3rem 0;
 }
-.writeup h2 {
-  font-size: 1.5rem;
-  margin: 2.5rem 0 0.75rem;
-}
+.writeup h2 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
 .writeup h2:first-child { margin-top: 0; }
 .writeup p, .writeup li { color: var(--text-dim); }
 
@@ -381,13 +407,13 @@ img { max-width: 100%; }
 
 /* ===== Mobile ===== */
 @media (max-width: 800px) {
-  .project-layout { grid-template-columns: 1fr; gap: 2rem; }
   .project-card { grid-template-columns: 1fr; }
-  .project-media { order: 0; }   /* media on top on phones */
-  .project-grid { gap: 2.5rem; }
-  .project-media { min-height: 0; aspect-ratio: 16 / 9; }
+  .project-media { order: 0; min-height: 0; aspect-ratio: 16 / 9; }
   .project-body { padding: 1.5rem; }
+  .project-grid { gap: 2.5rem; }
+  .project-layout { grid-template-columns: 1fr; gap: 2rem; }
   .sidebar { position: static; }
   .nav-links { gap: 1rem; }
   .hero { padding-top: 3rem; }
+  .studio-blurb { flex-direction: column; text-align: center; gap: 1rem; }
 }
