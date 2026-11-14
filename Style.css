@@ -1,0 +1,130 @@
+/* ===== Colors & basics — change these to restyle the whole site ===== */
+:root {
+  --bg: #0b3560;          /* navy background from your mockup */
+  --card: #124577;        /* slightly lighter navy for project cards */
+  --text: #ffffff;
+  --text-dim: #c9d6e6;
+  --accent: #f2b544;      /* button color */
+  --max-width: 800px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* ===== Header ===== */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0.25rem 0 2rem;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+}
+
+.hero-media {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ===== Projects ===== */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+.project-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  margin: 0 0 1rem;
+  color: var(--text-dim);
+}
+
+/* ===== Buttons ===== */
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* ===== Project pages ===== */
+.back-link {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--text); }
+
+.project-page h1 { margin: 1rem 0 0.25rem; }
+
+.project-page img,
+.project-page video {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+/* Keeps YouTube embeds at 16:9 and full width */
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
