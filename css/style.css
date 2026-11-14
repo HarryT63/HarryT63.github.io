@@ -182,7 +182,10 @@ img { max-width: 100%; }
 
 .project-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* text and media split 50/50 */
+  grid-template-columns: 1fr 1.15fr;   /* text a bit narrower than media */
+  gap: 2.5rem;
+  align-items: center;                 /* media sits centered next to the text */
+  padding: 2.25rem;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -195,17 +198,18 @@ img { max-width: 100%; }
 }
 
 .project-media {
-  display: flex;
-  align-items: center;  /* keeps the GIF at 16:9 and centered as the text gets taller */
+  display: block;
   order: 2;          /* puts media on the right; delete this line to move it left */
-  min-height: 300px;
-  background: linear-gradient(135deg, var(--bg-2), var(--bg));
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
   overflow: hidden;
+  background: var(--bg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 .project-media img,
 .project-media video {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.4s;
@@ -216,18 +220,24 @@ img { max-width: 100%; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 2.25rem;
 }
 
 .project-logo {
+  /* Every logo fits inside the same 300 x 150 box, so wide AND tall
+     logos come out about the same visual size. */
+  width: 300px;
+  height: 150px;
   max-width: 100%;
-  height: 200px;
-  width: auto;
   object-fit: contain;
+  object-position: left center;
   align-self: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
-.pixelart {image-rendering: pixelated;}
+.project-logo.large { width: 360px; height: 180px; }
+.project-logo.small { width: 240px; height: 120px; }
+
+/* Keeps pixel art crisp when scaled up */
+.pixel-art { image-rendering: pixelated; }
 .project-body h3 { margin: 0 0 1rem; font-size: 1.8rem; }
 .project-body p { margin: 0 0 1.25rem; color: var(--text-dim); }
 
@@ -464,8 +474,9 @@ img { max-width: 100%; }
 /* ===== Mobile ===== */
 @media (max-width: 800px) {
   .project-card { grid-template-columns: 1fr; }
-  .project-media { order: 0; min-height: 0; aspect-ratio: 16 / 9; }
-  .project-body { padding: 1.5rem; }
+  .project-media { order: 0; }
+  .project-card { padding: 1.5rem; gap: 1.5rem; }
+  .project-logo { width: 240px; height: 120px; }
   .project-grid { gap: 2.5rem; }
   .project-layout { grid-template-columns: 1fr; gap: 2rem; }
   .sidebar { position: static; }
