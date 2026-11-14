@@ -136,6 +136,13 @@ img { max-width: 100%; }
 }
 .studio-blurb p { margin: 0 0 0.5rem; color: var(--text-dim); font-size: 1.05rem; }
 
+.studio-blurb .studio-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
 /* Plain text link instead of a button */
 .text-link {
   color: var(--text);
@@ -220,7 +227,7 @@ img { max-width: 100%; }
   margin-bottom: 1rem;
 }
 .project-body h3 { margin: 0 0 1rem; font-size: 1.8rem; }
-.project-body p { margin: 0 0 1.5rem; color: var(--text-dim); }
+.project-body p { margin: 0 0 1.25rem; color: var(--text-dim); }
 
 /* Small labels like "Unity" or "Systems Design" */
 .tags {
@@ -240,6 +247,40 @@ img { max-width: 100%; }
   border: 1px solid color-mix(in srgb, var(--accent-2) 25%, transparent);
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
+}
+
+/* Role / Team / Timeframe / Tech — compact vertical list on each card */
+.project-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.project-facts li {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+}
+.project-facts span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding-top: 0.2rem;
+}
+
+/* More Info + Steam/itch.io buttons side by side */
+.card-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.card-actions .button.secondary { align-self: center; }
+
+/* "with Studio Name · Summer Internship" line under the game name */
+.studio-credit {
+  margin: -0.5rem 0 1rem !important;
+  font-size: 0.9rem;
+  color: var(--text-dim);
 }
 
 /* ===== Buttons ===== */
