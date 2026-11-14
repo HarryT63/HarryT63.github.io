@@ -1,130 +1,393 @@
-/* ===== Colors & basics — change these to restyle the whole site ===== */
+/* =========================================================
+   Harry Tomasco — Portfolio styles
+   Change the variables below to restyle the whole site.
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
 :root {
-  --bg: #0b3560;          /* navy background from your mockup */
-  --card: #124577;        /* slightly lighter navy for project cards */
-  --text: #ffffff;
-  --text-dim: #c9d6e6;
-  --accent: #f2b544;      /* button color */
-  --max-width: 800px;
+  --bg: #081f3a;            /* deep navy */
+  --bg-2: #0b3560;          /* lighter navy (your original color) */
+  --card: #10325a;
+  --card-hover: #15406f;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f4f7fb;
+  --text-dim: #a9bbd1;
+  --accent: #f2b544;        /* amber */
+  --accent-2: #4fd1c5;      /* teal, used for tags */
+  --radius: 12px;
+  --max-width: 1100px;
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; background: var(--bg); }
+
 body {
   margin: 0;
-  background: var(--bg);
+  background: radial-gradient(ellipse 120% 900px at top, var(--bg-2) 0%, var(--bg) 70%) no-repeat var(--bg);
+  min-height: 100vh;
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
 
-/* ===== Header ===== */
-.hero {
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; }
+
+a { color: var(--accent); }
+
+img { max-width: 100%; }
+
+.container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 4rem 1.5rem 2rem;
-  text-align: center;
+  padding: 0 1.5rem;
 }
 
+/* ===== Nav ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8, 31, 58, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 5rem 0 3rem;
+}
 .hero h1 {
   margin: 0;
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  letter-spacing: -0.02em;
 }
-
 .subtitle {
-  margin: 0.25rem 0 2rem;
-  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--accent);
+  font-weight: 500;
+}
+.hero-blurb {
+  max-width: 600px;
+  margin: 1rem auto 0;
   color: var(--text-dim);
 }
+.hero-blurb:empty { display: none; }
 
 .hero-media {
+  margin: 3rem auto 0;
+  max-width: 900px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(242, 181, 68, 0.15);
+  background: var(--card);
+  aspect-ratio: 16 / 9;
+}
+.hero-media img,
+.hero-media video {
   width: 100%;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* ===== Projects ===== */
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1rem 1.5rem 4rem;
-}
-
+/* ===== Section headings ===== */
+.section { padding: 3rem 0 4rem; }
 .section-title {
-  font-size: 1.5rem;
-  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.5rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
-.project-list {
+/* ===== Project cards (large, alternating) ===== */
+.project-grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 3.5rem;   /* space between project cards */
 }
 
 .project-card {
+  display: grid;
+  grid-template-columns: 2fr 3fr;   /* text ~40% on the left, media ~60% on the right */
   background: var(--card);
-  border-radius: 8px;
-  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
-.project-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.3rem;
+.project-media {
+  display: block;
+  order: 2;          /* puts media on the right; delete this line to move it back left */
+  min-height: 300px;
+  background: linear-gradient(135deg, var(--bg-2), var(--bg));
+  overflow: hidden;
+}
+.project-media img,
+.project-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.project-card:hover .project-media img { transform: scale(1.03); }
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2.25rem;
 }
 
-.project-card p {
-  margin: 0 0 1rem;
-  color: var(--text-dim);
+.project-logo {
+  max-width: 100%;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+.project-body h3 { margin: 0 0 1rem; font-size: 1.8rem; }
+.project-body p { margin: 0 0 1.5rem; color: var(--text-dim); }
+
+/* Small labels like "Unity" or "Systems Design" */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+.tags:empty { display: none; }
+.tags li {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  background: rgba(79, 209, 197, 0.1);
+  border: 1px solid rgba(79, 209, 197, 0.25);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
 }
 
 /* ===== Buttons ===== */
 .button {
   display: inline-block;
+  align-self: flex-start;
   background: var(--accent);
-  color: #1a1a1a;
+  color: #1a1408;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.5rem 1.1rem;
-  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   transition: transform 0.15s, filter 0.15s;
 }
+.button:hover { transform: translateY(-2px); filter: brightness(1.08); }
 
-.button:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
+.button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
 }
+.button.secondary:hover { border-color: var(--accent); }
 
-/* ===== Project pages ===== */
+.button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+
+/* ===== Footer ===== */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.footer-links { display: flex; gap: 1.25rem; }
+.footer-links a { color: var(--text-dim); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+
+/* =========================================================
+   Project pages
+   ========================================================= */
 .back-link {
+  display: inline-block;
+  margin-top: 2rem;
   color: var(--text-dim);
   text-decoration: none;
+  font-size: 0.95rem;
 }
-.back-link:hover { color: var(--text); }
+.back-link:hover { color: var(--accent); }
 
-.project-page h1 { margin: 1rem 0 0.25rem; }
-
-.project-page img,
-.project-page video {
-  width: 100%;
-  border-radius: 8px;
-  display: block;
-  margin: 1.5rem 0;
+.project-header { padding: 1.5rem 0 1rem; }
+.project-header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: -0.02em;
 }
+.project-header .subtitle:empty { display: none; }
 
-/* Keeps YouTube embeds at 16:9 and full width */
-.video-embed {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  margin: 1.5rem 0;
+/* Role / Engine / Team / Duration row */
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
+.meta dt {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.meta dd { margin: 0.25rem 0 0; font-weight: 600; }
+
+.media-main {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  background: var(--card);
+}
+.media-main img,
+.media-main video { width: 100%; display: block; }
+
+/* 16:9 YouTube embed */
+.video-embed { position: relative; aspect-ratio: 16 / 9; }
 .video-embed iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Two-column layout: writeup on the left, sidebar on the right */
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+.writeup h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 0.75rem;
+}
+.writeup h2:first-child { margin-top: 0; }
+.writeup p, .writeup li { color: var(--text-dim); }
+
+.sidebar {
+  align-self: start;
+  position: sticky;
+  top: 88px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.sidebar h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.sidebar .button { display: block; text-align: center; margin-bottom: 0.6rem; }
+
+/* Screenshot / GIF gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.gallery figure { margin: 0; }
+.gallery img,
+.gallery video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.gallery figcaption {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.4rem;
+}
+.gallery figcaption:empty { display: none; }
+
+/* Next project link at the bottom */
+.next-project {
+  display: block;
+  text-align: right;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-dim);
+}
+.next-project strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  color: var(--text);
+}
+.next-project:hover strong { color: var(--accent); }
+
+/* ===== Mobile ===== */
+@media (max-width: 800px) {
+  .project-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-media { order: 0; }   /* media on top on phones */
+  .project-grid { gap: 2.5rem; }
+  .project-media { min-height: 0; aspect-ratio: 16 / 9; }
+  .project-body { padding: 1.5rem; }
+  .sidebar { position: static; }
+  .nav-links { gap: 1rem; }
+  .hero { padding-top: 3rem; }
 }

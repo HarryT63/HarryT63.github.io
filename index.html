@@ -8,47 +8,114 @@
 </head>
 <body>
 
+  <!-- ===== NAV BAR ===== -->
+  <nav class="nav">
+    <div class="container">
+      <a class="nav-name" href="index.html">Harry Tomasco</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <!-- Add a resume link once you have the PDF in the repo:
+        <a href="resume.pdf">Resume</a> -->
+      </div>
+    </div>
+  </nav>
+
   <!-- ===== HEADER: name + info ===== -->
-  <header class="hero">
+  <header class="container hero">
     <h1>Harry Tomasco</h1>
     <p class="subtitle">Game Systems Designer &amp; Sound Designer</p>
+    <p class="hero-blurb"><!-- OPTIONAL SHORT INTRO ABOUT YOU HERE --></p>
 
-    <!-- MAGE GIF: put your file at images/mage/hero.gif (or change the path) -->
-    <img class="hero-media" src="images/mage/hero.gif" alt="MAGE gameplay">
+    <!-- MAGE GIF: put your file at images/mage/hero.gif (or change the path).
+         Using an MP4 instead? Swap the <img> for:
+         <video src="images/mage/hero.mp4" autoplay loop muted playsinline></video> -->
+    <div class="hero-media">
+      <img src="images/mage/hero.gif" alt="MAGE gameplay">
+    </div>
   </header>
 
   <!-- ===== PROJECTS ===== -->
-  <main>
+  <main id="projects" class="container section">
     <h2 class="section-title">Projects</h2>
 
-    <div class="project-list">
+    <div class="project-grid">
+
+      <!-- Each card: preview GIF/screenshot (left), logo + tags + description + button (right).
+           Preview: images/<project>/preview.gif (or .png) — 16:9 looks best. -->
 
       <article class="project-card">
-        <h3>MAGE</h3>
-        <p><!-- YOUR MAGE SUMMARY HERE --></p>
-        <a class="button" href="projects/MAGE.html">More Info</a>
+        <a class="project-media" href="projects/mage.html">
+          <img src="images/mage/preview.gif" alt="MAGE gameplay" onerror="this.remove()">
+        </a>
+        <div class="project-body">
+          <!-- Logo: images/mage/logo.png (transparent PNG works best). Shows the name as text if the logo is missing. -->
+          <img class="project-logo" src="images/mage/logo.png" alt="MAGE"
+               onerror="this.outerHTML='<h3>MAGE</h3>'">
+          <ul class="tags"><!-- e.g. <li>Unity</li><li>Systems Design</li> --></ul>
+          <p><!-- YOUR MAGE DESCRIPTION HERE --></p>
+          <a class="button" href="projects/mage.html">More Info</a>
+        </div>
       </article>
 
       <article class="project-card">
-        <h3>Fish Party</h3>
-        <p><!-- YOUR FISH PARTY SUMMARY HERE --></p>
-        <a class="button" href="projects/fish-party.html">More Info</a>
+        <a class="project-media" href="projects/fish-party.html">
+          <img src="images/fish-party/preview.gif" alt="Fish Party gameplay" onerror="this.remove()">
+        </a>
+        <div class="project-body">
+          <!-- Logo: images/fish-party/logo.png (transparent PNG works best). Shows the name as text if the logo is missing. -->
+          <img class="project-logo" src="images/fish-party/logo.png" alt="Fish Party"
+               onerror="this.outerHTML='<h3>Fish Party</h3>'">
+          <ul class="tags"><!-- e.g. <li>Unity</li><li>Systems Design</li> --></ul>
+          <p><!-- YOUR FISH PARTY DESCRIPTION HERE --></p>
+          <a class="button" href="projects/fish-party.html">More Info</a>
+        </div>
       </article>
 
       <article class="project-card">
-        <h3>Lighthouse Time Machine</h3>
-        <p><!-- YOUR LIGHTHOUSE TIME MACHINE SUMMARY HERE --></p>
-        <a class="button" href="projects/lighthouse-time-machine.html">More Info</a>
+        <a class="project-media" href="projects/lighthouse-time-machine.html">
+          <img src="images/lighthouse-time-machine/preview.gif" alt="Lighthouse Time Machine gameplay" onerror="this.remove()">
+        </a>
+        <div class="project-body">
+          <!-- Logo: images/lighthouse-time-machine/logo.png (transparent PNG works best). Shows the name as text if the logo is missing. -->
+          <img class="project-logo" src="images/lighthouse-time-machine/logo.png" alt="Lighthouse Time Machine"
+               onerror="this.outerHTML='<h3>Lighthouse Time Machine</h3>'">
+          <ul class="tags"><!-- e.g. <li>Unity</li><li>Systems Design</li> --></ul>
+          <p><!-- YOUR LIGHTHOUSE TIME MACHINE DESCRIPTION HERE --></p>
+          <a class="button" href="projects/lighthouse-time-machine.html">More Info</a>
+        </div>
       </article>
 
       <article class="project-card">
-        <h3>Little Cowboy</h3>
-        <p><!-- YOUR LITTLE COWBOY SUMMARY HERE --></p>
-        <a class="button" href="projects/little-cowboy.html">More Info</a>
+        <a class="project-media" href="projects/little-cowboy.html">
+          <img src="images/little-cowboy/preview.gif" alt="Little Cowboy gameplay" onerror="this.remove()">
+        </a>
+        <div class="project-body">
+          <!-- Logo: images/little-cowboy/logo.png (transparent PNG works best). Shows the name as text if the logo is missing. -->
+          <img class="project-logo" src="images/little-cowboy/logo.png" alt="Little Cowboy"
+               onerror="this.outerHTML='<h3>Little Cowboy</h3>'">
+          <ul class="tags"><!-- e.g. <li>Unity</li><li>Systems Design</li> --></ul>
+          <p><!-- YOUR LITTLE COWBOY DESCRIPTION HERE --></p>
+          <a class="button" href="projects/little-cowboy.html">More Info</a>
+        </div>
       </article>
 
     </div>
   </main>
+
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <span>&copy; 2026 Harry Tomasco</span>
+      <div class="footer-links">
+        <!-- Fill in your real links; delete any you don't use -->
+        <a href="mailto:YOUR_EMAIL_HERE">Email</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">itch.io</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
