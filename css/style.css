@@ -540,6 +540,95 @@ img { max-width: 100%; }
   border: 1px solid var(--border);
 }
 
+/* ===== Project page: stats, detail cards ===== */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+}
+.stat strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.stat span { font-size: 0.85rem; color: var(--text-dim); }
+
+.mini-heading {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0 0 0.5rem;
+}
+.writeup ul { padding-left: 1.2rem; }
+.writeup li::marker, .detail-card li::marker { color: var(--accent); }
+
+.detail-section { margin: 1rem 0 3.5rem; }
+.detail-section h2 { font-size: 1.6rem; margin: 0 0 0.75rem; }
+.section-intro { color: var(--text-dim); max-width: 820px; margin: 0 0 1.75rem; }
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.detail-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+.card-gif {
+  width: calc(100% + 2.8rem);
+  max-width: none;   /* lets the GIF reach the card edges */
+  margin: -1.25rem -1.4rem 1.1rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.detail-card h3 { margin: 0 0 0.6rem; font-size: 1.25rem; }
+.detail-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+}
+.detail-card li { margin-bottom: 0.35rem; }
+
+.card-tag {
+  display: inline-block;
+  margin: -0.25rem 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+.pcr { margin: 0; font-size: 0.92rem; }
+.pcr dt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-top: 0.8rem;
+}
+.pcr dt:first-child { margin-top: 0; }
+.pcr dd { margin: 0.15rem 0 0; color: var(--text-dim); }
+
 /* Next project link at the bottom */
 .next-project {
   display: block;
@@ -558,12 +647,18 @@ img { max-width: 100%; }
 .next-project:hover strong { color: var(--accent); }
 
 /* ===== Mobile ===== */
+@media (max-width: 1000px) and (min-width: 801px) {
+  .card-row { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 800px) {
   .project-card { grid-template-columns: 1fr; }
   .project-media { order: 0; }
   .project-card { padding: 1.5rem; gap: 1.5rem; }
   .project-logo { width: 240px; height: 120px; }
   .project-header .project-logo { width: 100%; height: 160px; }
+  .card-row { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
   .project-grid { gap: 2.5rem; }
   .project-layout { grid-template-columns: 1fr; gap: 2rem; }
   .sidebar { position: static; }

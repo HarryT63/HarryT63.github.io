@@ -54,68 +54,136 @@
           <a class="button" href="https://store.steampowered.com/app/4459080/MAGE_Mega_Awesome_Gregarious_Encounters/" target="_blank">View on Steam</a>
         </div>
 
-        <h2>Overview</h2>
-        <p><!-- YOUR TEXT HERE --></p>
+        <h2>How It Plays</h2>
+        <p>MAGE has very simple controls, using only one joystick and 3 buttons. You aim your wand with the joystick, fire projectiles in the direction you’re facing, move in the opposite direction, and Counterspell to parry enemy projectiles.</p>
 
-        <h2>What I Did</h2>
-        <p><!-- YOUR TEXT HERE --></p>
-        <!-- Bullet list version:
+        <h2>Publishing to Steam</h2>
+        <div class="stats">
+          <div class="stat"><strong>1,000 → 3,000</strong><span>wishlists in one week during Steam Next Fest</span></div>
+          <div class="stat"><strong>5,000+</strong><span>wishlists</span></div>
+          <div class="stat"><strong>750+</strong><span>copies sold</span></div>
+          <div class="stat"><strong>June 23, 2026</strong><span>released</span></div>
+        </div>
+        <h3 class="mini-heading">What I did</h3>
         <ul>
-          <li></li>
-        </ul> -->
-
-        <h2>Takeaways</h2>
-        <p><!-- YOUR TEXT HERE --></p>
+          <li>Took charge of managing the business when we decided to publish to Steam</li>
+          <li>Formed an LLC for FunRug Studio at the beginning of 2026</li>
+          <li>Created and published the Steam store page to start gaining wishlists</li>
+          <li>Uploaded and supported depots and builds for Windows, Mac and Linux</li>
+        </ul>
       </article>
 
       <!-- Screenshots stack on the right. Copy a <figure> per image;
            a figure whose image is missing hides itself. -->
       <aside class="shots">
         <figure>
-          <img src="../images/mage/mage-screenshot-1.jpg" alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <img src="../images/mage/shot1.png" alt="MAGE screenshot" onerror="this.parentElement.remove()">
           <figcaption><!-- OPTIONAL CAPTION --></figcaption>
         </figure>
         <figure>
-          <img src="../images/mage/mage-screenshot-2.jpg" alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <img src="../images/mage/shot2.png" alt="MAGE screenshot" onerror="this.parentElement.remove()">
           <figcaption></figcaption>
         </figure>
         <figure>
-          <img src="../images/mage/mage-screenshot-3.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
-          <figcaption></figcaption>
-        </figure>
-        <figure>
-          <img src="../images/mage/mage-screenshot-4.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
-          <figcaption></figcaption>
-        </figure>
-        <figure>
-          <img src="../images/mage/mage-screenshot-5.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
-          <figcaption></figcaption>
-        </figure>
-        <figure>
-          <img src="../images/mage/mage-screenshot-6.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
-          <figcaption></figcaption>
-        </figure>
-        <figure>
-          <img src="../images/mage/mage-screenshot-7.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
-          <figcaption></figcaption>
-        </figure>
-        <figure>
-          <img src="../images/mage/mage-screenshot-8.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <img src="../images/mage/shot3.png" alt="MAGE screenshot" onerror="this.parentElement.remove()">
           <figcaption></figcaption>
         </figure>
       </aside>
 
     </div>
 
+    <!-- ===== DESIGNING UNIQUE CHARACTERS =====
+         Each card has an optional GIF spot: images/mage/fire-mage.gif, gravity-mage.gif, ghost-mage.gif.
+         Hidden until the file exists. Using MP4s? Swap the <img> for
+         <video class="card-gif" src="../images/mage/fire-mage.mp4" autoplay loop muted playsinline></video> -->
+    <section class="detail-section">
+      <h2>Designing Unique Characters</h2>
+      <p class="section-intro">MAGE has 21 unique characters, each with a different kit and playstyle. As lead designer, I designed over half the roster and gave input on the rest. Every character has one of 2 styles of movement (in the air or off walls) and unique projectiles, and they all share the same Counterspell ability to parry projectiles.</p>
+      <div class="card-row">
+      <article class="detail-card">
+          <img class="card-gif" src="../images/mage/fire-mage.gif" alt="Fire Mage gameplay" onerror="this.remove()">
+        <h3>Fire Mage</h3>
+        <ul>
+          <li>A simple character with a low skill floor and a high skill ceiling.</li>
+          <li>Very fast projectile, balanced by a high cooldown and lots of recoil.</li>
+          <li>Short dash on Counterspell to build momentum.</li>
+          <li>Very slow movement but low damping, so he can build up lots of speed.</li>
+          <li>New players enjoy his strong attack, while skilled players master his recoil and dash to compensate for his lack of movement.</li>
+        </ul>
+      </article>
+      <article class="detail-card">
+          <img class="card-gif" src="../images/mage/gravity-mage.gif" alt="Gravity Mage gameplay" onerror="this.remove()">
+        <h3>Gravity Mage</h3>
+        <ul>
+          <li>Only moves bouncing off walls.</li>
+          <li>Gains a rock whenever he bounces off a wall (can have up to 3 at once).</li>
+          <li>Projectiles can be fired rapidly, but only if he has the rocks.</li>
+          <li>Rewards the player for good movement, and allows aggressive bursts.</li>
+        </ul>
+      </article>
+      <article class="detail-card">
+          <img class="card-gif" src="../images/mage/ghost-mage.gif" alt="Ghost Mage gameplay" onerror="this.remove()">
+        <h3>Ghost Mage</h3>
+        <ul>
+          <li>Fires a boomerang projectile.</li>
+          <li>Shorter range projectile, but it can hit on the way back.</li>
+          <li>Can Counterspell his own projectile to shoot a charged shot.</li>
+          <li>Aggressive playstyle with a higher incentive to master Counterspelling.</li>
+        </ul>
+      </article>
+      </div>
+    </section>
+
+    <!-- ===== BALANCING THROUGH PLAYTESTING =====
+         Optional GIF spots: images/mage/wind-mage.gif, flower-mage.gif, moon-mage.gif -->
+    <section class="detail-section">
+      <h2>Balancing Through Playtesting</h2>
+      <p class="section-intro">I ran many testing sessions with friends, family and classmates to make sure no mage felt too strong or too weak. I collected feedback through testing forms to statistically compare how viable players thought each mage was, and used Steam stats from the demo and the full game to see how often each mage was picked and how often they won. For the most part the game was well balanced, but a few characters needed changes:</p>
+      <div class="card-row">
+      <article class="detail-card">
+          <img class="card-gif" src="../images/mage/wind-mage.gif" alt="Wind Mage gameplay" onerror="this.remove()">
+        <h3>Wind Mage</h3>
+        <p class="card-tag">Too strong</p>
+        <dl class="pcr">
+          <dt>Problem</dt><dd>With the ability to redirect projectiles, Wind Mage could shoot players from around walls without ever being at risk of getting hit.</dd>
+          <dt>Change</dt><dd>Lowered his movement force so he couldn’t hide behind walls all game, and limited him to one projectile on screen at a time with a decent cooldown.</dd>
+          <dt>Result</dt><dd>The projectile is still very strong, but he can’t rapid-fire like other characters, making him a very tactical high-risk high-reward character.</dd>
+        </dl>
+      </article>
+      <article class="detail-card">
+          <img class="card-gif" src="../images/mage/flower-mage.gif" alt="Flower Mage gameplay" onerror="this.remove()">
+        <h3>Flower Mage</h3>
+        <p class="card-tag">Too strong for new players</p>
+        <dl class="pcr">
+          <dt>Problem</dt><dd>Her projectiles explode on walls, giving her a larger threat range, especially against newer players who haven’t mastered movement.</dd>
+          <dt>Change</dt><dd>Lowered her attack speed by a substantial margin, and made her projectile come back a little faster when destroyed.</dd>
+          <dt>Result</dt><dd>She can still use her secondary mechanic of bouncing off her own explosions, but is no longer overly oppressive to new players.</dd>
+        </dl>
+      </article>
+      <article class="detail-card">
+          <img class="card-gif" src="../images/mage/moon-mage.gif" alt="Moon Mage gameplay" onerror="this.remove()">
+        <h3>Moon Mage</h3>
+        <p class="card-tag">Too weak</p>
+        <dl class="pcr">
+          <dt>Problem</dt><dd>He has almost no gravity and can only move by jumping off walls. A cool concept, but incredibly hard to play, especially for new players.</dd>
+          <dt>Change</dt><dd>Increased the range he can jump off walls from, added a charge attack whose recoil grows the longer you charge it to get back toward walls, and gave his Counterspell one free jump in any direction to recover when stuck.</dd>
+          <dt>Result</dt><dd>Still one of the harder characters to learn, but now feels powerful and fun to play.</dd>
+        </dl>
+      </article>
+      </div>
+    </section>
+
     <!-- ===== DEMO REEL (optional) =====
          To turn it on: delete the two "REMOVE THIS LINE" lines below, then
          replace VIDEO_ID with the code after "watch?v=" in your YouTube link. -->
+    <!-- REMOVE THIS LINE
     <section class="demo-reel">
       <h2>Demo Reel</h2>
       <div class="video-embed">
         <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="MAGE demo reel" allowfullscreen></iframe>
       </div>
     </section>
+    REMOVE THIS LINE -->
 
     <!-- ===== NEXT PROJECT ===== -->
     <a class="next-project" href="father-son-and-holy-guns.html">
@@ -126,7 +194,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span>2026 Harry Tomasco</span>
+      <span>&copy; 2026 Harry Tomasco</span>
     </div>
   </footer>
 
