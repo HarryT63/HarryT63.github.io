@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAGE — Harry Tomasco</title>
-  <!-- "../" because this file is one folder down from the site root -->
+  <!-- "../" because this file is one folder down from the site root.
+       Every image/video path on this page needs "../" at the front too. -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -20,40 +21,39 @@
   </nav>
 
   <main class="container">
-    <a class="back-link" href="../index.html#projects">&larr; All projects</a>
+    <a class="button secondary back-button" href="../index.html#projects">&larr; All Projects</a>
 
     <!-- ===== TITLE ===== -->
     <header class="project-header">
-      <h1>MAGE</h1>
+      <img class="project-logo pixelart" src="../images/mage/mage-logo.png" alt="MAGE"
+           onerror="this.outerHTML='<h1>MAGE</h1>'">
       <p class="subtitle"><!-- OPTIONAL ONE-LINE TAGLINE HERE --></p>
     </header>
 
-    <!-- ===== MAIN MEDIA (pick ONE, delete the others) ===== -->
+    <!-- ===== MAIN MEDIA ===== -->
     <div class="media-main">
-      <!-- Option A: YouTube — replace VIDEO_ID with the part after "watch?v=" -->
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="MAGE video" allowfullscreen></iframe>
-      </div>
-
-      <!-- Option B: image or GIF
-      <img src="../images/mage/main.gif" alt="MAGE gameplay"> -->
-
-      <!-- Option C: looping MP4
-      <video src="../images/mage/main.mp4" autoplay loop muted playsinline></video> -->
+      <video src="../images/mage/mage.mp4" autoplay loop muted playsinline></video>
     </div>
 
-    <!-- ===== QUICK FACTS (edit labels or delete rows freely) ===== -->
+    <!-- ===== SUMMARY (same as the home page card) ===== -->
+    <p class="project-summary">A 2-4 player party fighting game with 21 different mages to choose from to fight with friends. Accumulated over 5000 wishlists and over 750 copies sold!</p>
+
+    <!-- ===== QUICK FACTS ===== -->
     <dl class="meta">
-      <div><dt>Role</dt><dd><!-- YOUR ROLE --></dd></div>
-      <div><dt>Engine / Tools</dt><dd><!-- e.g. Unity, FMOD --></dd></div>
-      <div><dt>Team Size</dt><dd><!-- e.g. 4 --></dd></div>
-      <div><dt>Duration</dt><dd><!-- e.g. 12 weeks --></dd></div>
+      <div><dt>Role</dt><dd>Lead Designer</dd></div>
+      <div><dt>Team</dt><dd>4</dd></div>
+      <div><dt>Timeframe</dt><dd>Sep 2024 to Jun 2026</dd></div>
+      <div><dt>Tech</dt><dd>Unity, C#, Steamworks</dd></div>
     </dl>
 
-    <!-- ===== WRITEUP + SIDEBAR ===== -->
+    <!-- ===== WRITEUP (left) + SCREENSHOTS (right) ===== -->
     <div class="project-layout">
 
       <article class="writeup">
+        <div class="button-row">
+          <a class="button" href="https://store.steampowered.com/app/4459080/MAGE_Mega_Awesome_Gregarious_Encounters/" target="_blank">View on Steam</a>
+        </div>
+
         <h2>Overview</h2>
         <p><!-- YOUR TEXT HERE --></p>
 
@@ -64,30 +64,58 @@
           <li></li>
         </ul> -->
 
-        <!-- Screenshot / GIF gallery — copy a <figure> per image -->
-        <div class="gallery">
-          <figure>
-            <img src="../images/mage/shot1.png" alt="">
-            <figcaption><!-- OPTIONAL CAPTION --></figcaption>
-          </figure>
-          <figure>
-            <img src="../images/mage/shot2.png" alt="">
-            <figcaption></figcaption>
-          </figure>
-        </div>
-
         <h2>Takeaways</h2>
         <p><!-- YOUR TEXT HERE --></p>
       </article>
 
-      <aside class="sidebar">
-        <h3>Links</h3>
-        <!-- Delete any you don't need -->
-        <a class="button" href="#">Play on itch.io</a>
-        <a class="button secondary" href="#">View on GitHub</a>
+      <!-- Screenshots stack on the right. Copy a <figure> per image;
+           a figure whose image is missing hides itself. -->
+      <aside class="shots">
+        <figure>
+          <img src="../images/mage/mage-screenshot-1.jpg" alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption><!-- OPTIONAL CAPTION --></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-2.jpg" alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-3.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-4.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-5.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-6.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-7.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/mage/mage-screenshot-8.jpg " alt="MAGE screenshot" onerror="this.parentElement.remove()">
+          <figcaption></figcaption>
+        </figure>
       </aside>
 
     </div>
+
+    <!-- ===== DEMO REEL (optional) =====
+         To turn it on: delete the two "REMOVE THIS LINE" lines below, then
+         replace VIDEO_ID with the code after "watch?v=" in your YouTube link. -->
+    <section class="demo-reel">
+      <h2>Demo Reel</h2>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="MAGE demo reel" allowfullscreen></iframe>
+      </div>
+    </section>
 
     <!-- ===== NEXT PROJECT ===== -->
     <a class="next-project" href="father-son-and-holy-guns.html">
@@ -98,13 +126,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span>&copy; 2026 Harry Tomasco</span>
-      <div class="footer-links">
-        <a href="mailto:YOUR_EMAIL_HERE">Email</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">itch.io</a>
-        <a href="#">GitHub</a>
-      </div>
+      <span>2026 Harry Tomasco</span>
     </div>
   </footer>
 
