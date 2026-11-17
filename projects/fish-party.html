@@ -54,18 +54,14 @@
           <a class="button" href="https://store.steampowered.com/app/5170080/Fish_Party/" target="_blank">View on Steam</a>
         </div>
 
-        <h2>Overview</h2>
-        <p><!-- YOUR TEXT HERE --></p>
-
-        <h2>What I Did</h2>
-        <p><!-- YOUR TEXT HERE --></p>
-        <!-- Bullet list version:
+        <h2>How It Plays</h2>
+        <p>Fish Party is designed to be hyper accessible, so that anyone can play regardless of gaming experience. Each player controls a fish with only 1 button: you press it to change the direction your fish rotates, and you can hold it to dash. That’s it.</p>
         <ul>
-          <li></li>
-        </ul> -->
-
-        <h2>Takeaways</h2>
-        <p><!-- YOUR TEXT HERE --></p>
+          <li>Each fish has a simple goal to score points, and players compete to score the most points totaled up across all the fish.</li>
+          <li>Every player gets a turn on every fish in the environment, ensuring that the games are fair.</li>
+          <li>One button controls allow for 12 players to play locally very easily.</li>
+          <li>Players can share controllers, or have multiple people all pressing a different key on the keyboard.</li>
+        </ul>
       </article>
 
       <!-- Screenshots stack on the right. Copy a <figure> per image;
@@ -86,6 +82,98 @@
       </aside>
 
     </div>
+
+    <!-- ===== REAL WORLD ECOSYSTEMS =====
+         Research image: images/fish-party/research.png. Its caption hides with it until the file exists. -->
+    <section class="detail-section">
+      <h2>Real World Ecosystems</h2>
+      <p class="section-intro">Since Fish Party is a game about ecosystems, it was important to me that we accurately represent behaviors of real world fish in the environments they would be living in.</p>
+      <ul class="detail-list">
+        <li>I took the lead researching fish in freshwater and saltwater environments to learn about unique behaviors we could include in the game.</li>
+        <li>Every level in the game is based on a real world location, like Bermuda or the Great Barrier Reef.</li>
+      </ul>
+
+      <figure class="doc-figure">
+        <figcaption>This is the research I conducted on freshwater fish living in Seneca Lake in New York State.</figcaption>
+        <img src="../images/fish-party/research.png" alt="Research on freshwater fish in Seneca Lake" onerror="this.parentElement.remove()">
+      </figure>
+
+      <h3 class="mini-heading">Examples of real world behaviors</h3>
+      <ul class="detail-list">
+        <li>Groupers and eels often hunt together in real life, so in Fish Party they share points when they eat prey near each other.</li>
+        <li>Male Bowfin are very protective of their spawn, so in Fish Party one player plays as the parent and protects their children from predators.</li>
+      </ul>
+    </section>
+
+    <!-- ===== ITERATION =====
+         Optional GIF spots: images/fish-party/dash.gif and blenny-damselfish.gif.
+         Before/after pictures: images/fish-party/blenny-before.png and blenny-after.png. -->
+    <section class="detail-section">
+      <h2>Iteration</h2>
+      <p class="section-intro">The current fish in the game have gone through a lot of iteration to make them more fun.</p>
+      <div class="card-row two">
+        <article class="detail-card">
+          <img class="card-gif" src="../images/fish-party/dash.gif" alt="Fish dashing" onerror="this.remove()">
+          <h3>Slow Gameplay</h3>
+          <dl class="pcr">
+            <dt>Problem</dt><dd>The initial prototype for the game had interesting interactions between fish, but the moment to moment gameplay of playing as a fish was not very fun. The game felt too slow.</dd>
+            <dt>Change</dt><dd>We increased the base speed of all the fish, and added the option to dash. If the player holds their button down, their fish dashes forward.</dd>
+            <dt>Result</dt><dd>This adds a new system for players to engage with to allow for more decision making and to make gameplay more exciting.</dd>
+          </dl>
+        </article>
+        <article class="detail-card">
+          <img class="card-gif" src="../images/fish-party/blenny-damselfish.gif" alt="Blenny and damselfish" onerror="this.remove()">
+          <h3>Blenny vs. Damselfish</h3>
+          <p class="card-lead">The blenny scores points by eating the algae while the damselfish scores points for being near the algae, so naturally these two are enemies.</p>
+          <dl class="pcr">
+            <dt>Problem</dt><dd>In the initial prototype, it was way too easy for blennies to dodge the damselfish and quickly eat the algae, leaving the damselfish without any points.</dd>
+            <dt>Change</dt>
+            <dd>
+              <ul>
+                <li>I changed the algae to have 2 hit points, and made the blenny bounce back when they took a bite out of the algae.</li>
+                <li>I made algae grow in groups of 3, so there is more algae for the damselfish to defend and more for the blenny to eat.</li>
+                <li>I gave the damselfish a small amount of points for eating small fish, as well as for being near algae.</li>
+              </ul>
+            </dd>
+            <dt>Result</dt><dd>This gives the damselfish an extra incentive to eat the blennies and other small fish passing by. Now both fish have a fair way to score and feel exciting to play.</dd>
+          </dl>
+        </article>
+      </div>
+
+      <div class="before-after">
+        <figure class="doc-figure">
+          <figcaption>Before</figcaption>
+          <img src="../images/fish-party/blenny-before.png" alt="Blennies and damselfish before the changes" onerror="this.parentElement.remove()">
+        </figure>
+        <figure class="doc-figure">
+          <figcaption>After</figcaption>
+          <img src="../images/fish-party/blenny-after.png" alt="Blennies and damselfish after the changes" onerror="this.parentElement.remove()">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== COMPARING STATISTICS =====
+         Stats picture: images/fish-party/stats.png. Hidden until the file exists. -->
+    <section class="detail-section">
+      <h2>Comparing Statistics</h2>
+      <p class="section-intro">Tracking the statistics of rounds, we can compare the amount of points each fish scores on average. I can adjust the point values that each fish gets so they are balanced and feel rewarding to play.</p>
+      <figure class="doc-figure">
+        <img src="../images/fish-party/stats.png" alt="Fish Party round statistics" onerror="this.parentElement.remove()">
+      </figure>
+    </section>
+
+    <!-- ===== FUTURE PLANS ===== -->
+    <section class="detail-section">
+      <h2>Future Plans</h2>
+      <p class="section-intro">Fish Party is still in development. The free demo is available to play on Steam.</p>
+      <div class="stats wide">
+        <div class="stat"><strong>15</strong><span>levels in the demo (5 reef maps, each with 3 fish distributions)</span></div>
+        <div class="stat"><strong>16</strong><span>fish are currently implemented, with 20 more designed and ready to be implemented</span></div>
+        <div class="stat"><strong>4</strong><span>more environments in the full game: Beach, Open Ocean, Lake and River</span></div>
+        <div class="stat"><strong>Early March 2027</strong><span>full release</span></div>
+      </div>
+      <p class="section-intro">Each of these new environmental themes will have unique mechanics and unique fish.</p>
+    </section>
 
     <!-- ===== DEMO REEL (optional) =====
          To turn it on: delete the two "REMOVE THIS LINE" lines below, then

@@ -647,6 +647,38 @@ img { max-width: 100%; }
 .pcr dt:first-child { margin-top: 0; }
 .pcr dd { margin: 0.15rem 0 0; color: var(--text-dim); }
 
+/* Two cards per row instead of three */
+.card-row.two { grid-template-columns: 1fr 1fr; }
+.card-lead { margin: 0 0 0.9rem; font-size: 0.92rem; color: var(--text-dim); }
+.pcr dd ul { margin-top: 0.25rem; }
+
+/* Four stats in one row */
+.stats.wide { grid-template-columns: repeat(4, 1fr); }
+
+/* Document / chart / before-after images with a caption above */
+.doc-figure { margin: 1.75rem 0; max-width: 820px; }
+.doc-figure figcaption { color: var(--text-dim); margin-bottom: 0.6rem; }
+.doc-figure img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.before-after:empty { display: none; }
+.before-after .doc-figure { margin: 1.5rem 0 0; max-width: none; }
+.before-after figcaption {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.detail-section .mini-heading { margin-top: 1.75rem; }
+
 /* Next project link at the bottom */
 .next-project {
   display: block;
@@ -675,7 +707,8 @@ img { max-width: 100%; }
   .project-card { padding: 1.5rem; gap: 1.5rem; }
   .project-logo { width: 240px; height: 120px; }
   .project-header .project-logo { width: 100%; height: 160px; }
-  .card-row { grid-template-columns: 1fr; }
+  .card-row, .card-row.two { grid-template-columns: 1fr; }
+  .stats.wide, .before-after { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
   .project-grid { gap: 2.5rem; }
   .project-layout { grid-template-columns: 1fr; gap: 2rem; }
