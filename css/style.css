@@ -678,6 +678,23 @@ img { max-width: 100%; }
   border-radius: 8px;
   border: 1px solid var(--border);
 }
+.doc-figure.small { max-width: 400px; }
+/* Text on the left, document on the right */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 360px;   /* width of the document */
+  gap: 2.5rem;
+  align-items: start;
+}
+.split .doc-figure { margin: 0; max-width: none; }
+.split .doc-figure figcaption {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .split { grid-template-columns: 1fr; }
+}
 .before-after {
   display: grid;
   grid-template-columns: 1fr 1fr;
