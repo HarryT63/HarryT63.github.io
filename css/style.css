@@ -652,6 +652,16 @@ img { max-width: 100%; }
 .card-lead { margin: 0 0 0.9rem; font-size: 0.92rem; color: var(--text-dim); }
 .pcr dd ul { margin-top: 0.25rem; }
 
+/* Section heading with a button beside it */
+.heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.heading-row h2 { margin: 0; }
+
 /* Stats row limited to the text width */
 .stats.narrow { max-width: 820px; }
 .detail-list + .sound-clip { margin-top: 1.5rem; }
@@ -682,6 +692,7 @@ img { max-width: 100%; }
   text-transform: uppercase;
 }
 .detail-section .mini-heading { margin-top: 1.75rem; }
+.section-intro + .mini-heading { margin-top: -0.5rem; }
 
 /* Video clip with sound and play controls */
 .sound-clip {
