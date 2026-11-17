@@ -173,6 +173,26 @@
       </div>
     </section>
 
+    <!-- ===== ADAPTIVE SOUNDTRACK =====
+         Optional clip WITH sound: images/mage/soundtrack.mp4.
+         It shows play controls and stays hidden until the file exists. -->
+    <section class="detail-section">
+      <h2>Adaptive Soundtrack</h2>
+      <p class="section-intro">MAGE features an adaptive soundtrack that I both wrote the music for and implemented.</p>
+      <ul class="detail-list">
+        <li>27 tracks in the main score (6 base tracks and 1 for each of the 21 characters)</li>
+        <li>2–4 mage tracks featured in every battle</li>
+      </ul>
+      <h3 class="mini-heading">How it works</h3>
+      <ul class="detail-list">
+        <li>Each mage has their own instrument and music written in the main theme.</li>
+        <li>Their instrument is only played if that mage is alive in the round.</li>
+        <li>The music is not intended for all of the tracks to be listened to at once. Instead, it allows for a unique combination of music to be played for every unique battle in the arena.</li>
+        <li>Every track is played simultaneously, with only the specific mages in the round being unmuted. This allows for tracks to be interchanged seamlessly when a mage dies or a player switches their character.</li>
+      </ul>
+      <video class="sound-clip" src="../images/mage/soundtrack.mp4" controls playsinline onerror="this.remove()"></video>
+    </section>
+
     <!-- ===== DEMO REEL (optional) =====
          To turn it on: delete the two "REMOVE THIS LINE" lines below, then
          replace VIDEO_ID with the code after "watch?v=" in your YouTube link. -->

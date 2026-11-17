@@ -54,42 +54,85 @@
           <a class="button" href="https://funrug-studio.itch.io/lighthouse-game" target="_blank">Play on itch.io</a>
         </div>
 
-        <h2>Overview</h2>
-        <p><!-- YOUR TEXT HERE --></p>
-
-        <h2>What I Did</h2>
-        <p><!-- YOUR TEXT HERE --></p>
-        <!-- Bullet list version:
-        <ul>
-          <li></li>
-        </ul> -->
-
-        <h2>Takeaways</h2>
-        <p><!-- YOUR TEXT HERE --></p>
+        <h2>The Jam</h2>
+        <p>Lighthouse Time Machine was made for the 2026 Wolf Jam with the theme of “Visibility”. It is a 2D top down management game where you must use the light from your lighthouse to peer through the fog, and guide ships safely to port. I led a design team of 5 to create this project within the 24 hour time limit of the game jam.</p>
       </article>
 
       <!-- Screenshots stack on the right. Copy a <figure> per image;
            a figure whose image is missing hides itself. -->
       <aside class="shots">
         <figure>
-          <img src="../images/lighthouse-time-machine/lighthouse-1.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
+          <img src="../images/lighthouse-time-machine/shot1.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
           <figcaption><!-- OPTIONAL CAPTION --></figcaption>
         </figure>
         <figure>
-          <img src="../images/lighthouse-time-machine/lighthouse-2.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
+          <img src="../images/lighthouse-time-machine/shot2.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
           <figcaption></figcaption>
         </figure>
         <figure>
-          <img src="../images/lighthouse-time-machine/lighthouse-3.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
-          <figcaption></figcaption>
-        </figure>
-        <figure>
-          <img src="../images/lighthouse-time-machine/lighthouse-4.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
+          <img src="../images/lighthouse-time-machine/shot3.png" alt="Lighthouse Time Machine screenshot" onerror="this.parentElement.remove()">
           <figcaption></figcaption>
         </figure>
       </aside>
 
     </div>
+
+    <!-- ===== THE PIVOT =====
+         Optional pictures: images/lighthouse-time-machine/concept.png (original idea)
+         and final.png (finished game). Each hides until its file exists. -->
+    <section class="detail-section">
+      <h2>The Pivot</h2>
+      <div class="card-row two">
+        <article class="detail-card">
+          <h3>Original Concept</h3>
+          <ul>
+            <li>A 2D side-on view of a lighthouse with an emphasis on atmosphere.</li>
+            <li>The player would run around the lighthouse to activate different lamps to defend against demons coming from all sides.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Problem</h3>
+          <ul>
+            <li>While developing our initial concept, we were stuck. The core gameplay loop simply wasn’t fun or rewarding enough, and we realized it would become repetitive and mundane.</li>
+            <li>We tried to brainstorm ways to improve the concept, but none of the ideas would be realistically achievable in the limited time of the game jam.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Decision</h3>
+          <p class="card-lead">We as a team decided to completely pivot our game idea 5 hours in. Our new idea was the simpler, more arcadey style game we have now.</p>
+        </article>
+        <article class="detail-card">
+          <h3>Result</h3>
+          <p class="card-lead">This pivot was a scary decision but made intentionally, and it paid off. We were able to deliver a well polished and fun game with a satisfying and rewarding core loop. We ended up placing 2nd in the jam, proving our pivot was the right decision.</p>
+        </article>
+      </div>
+
+      <div class="before-after">
+        <figure class="doc-figure">
+          <figcaption>Original concept</figcaption>
+          <img src="../images/lighthouse-time-machine/concept.png" alt="Original lighthouse concept" onerror="this.parentElement.remove()">
+        </figure>
+        <figure class="doc-figure">
+          <figcaption>Final game</figcaption>
+          <img src="../images/lighthouse-time-machine/final.png" alt="Lighthouse Time Machine final game" onerror="this.parentElement.remove()">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== DYNAMIC MUSIC =====
+         Optional clip WITH sound: images/lighthouse-time-machine/music.mp4.
+         It shows play controls and stays hidden until the file exists. -->
+    <section class="detail-section">
+      <h2>Dynamic Music</h2>
+      <p class="section-intro">Lighthouse Time Machine features music that speeds up as the game goes on. I wrote the music and implemented this system.</p>
+      <h3 class="mini-heading">How it works</h3>
+      <ul class="detail-list">
+        <li>The music switches between 2 different loops, the slow loop and the fast loop.</li>
+        <li>The game starts in the menu with the slow loop, and when the loop ends it checks to see if the game is running.</li>
+        <li>If the game is running it will play the transition that speeds up over time and then continue looping the fast loop.</li>
+      </ul>
+      <video class="sound-clip" src="../images/lighthouse-time-machine/music.mp4" controls playsinline onerror="this.remove()"></video>
+    </section>
 
     <!-- ===== DEMO REEL (optional) =====
          To turn it on: delete the two "REMOVE THIS LINE" lines below, then
