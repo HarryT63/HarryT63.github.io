@@ -708,6 +708,20 @@ img { max-width: 100%; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+/* Equal-width columns that never stretch to fit their content */
+.before-after { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* Same-size 16:9 box for images and videos */
+.before-after img,
+.before-after video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--card);
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
 .detail-section .mini-heading { margin-top: 1.75rem; }
 .section-intro + .mini-heading { margin-top: -0.5rem; }
 
